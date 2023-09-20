@@ -5,10 +5,13 @@ using UnityEngine;
 public class SpawnerHAR : MonoBehaviour
 {
     public GameObject agentPF;
-    public GameObject spawnPoint;
+    public GameObject p1spawnPoint;
+    public GameObject p2spawnPoint;
     float cd = 1;
-    float currentTimeRight;
-    float currentTimeLeft;
+    float currentP1TimeRight;
+    float currentP1TimeLeft;
+    float currentP2TimeRight;
+    float currentP2TimeLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,27 +21,56 @@ public class SpawnerHAR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTimeLeft += Time.deltaTime;
-        currentTimeRight += Time.deltaTime;
+        currentP1TimeLeft += Time.deltaTime;
+        currentP1TimeRight += Time.deltaTime;
+        currentP2TimeLeft += Time.deltaTime;
+        currentP2TimeRight += Time.deltaTime;
 
+        //SPAWN P1'S LEFT SIDE
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (currentTimeLeft > cd)
+            if (currentP1TimeLeft > cd)
             {
-                GameObject agent = Instantiate(agentPF, spawnPoint.transform.position, Quaternion.identity);
+                GameObject agent = Instantiate(agentPF, p1spawnPoint.transform.position, Quaternion.identity);
                 PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
                 agentSc.SpawnLeftSideP1();
-                currentTimeLeft = 0;
+                currentP1TimeLeft = 0;
             }
         }
+
+        //SPAWN P1'S RIGHT SIDE
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (currentTimeRight > cd)
+            if (currentP1TimeRight > cd)
             {
-                GameObject agent = Instantiate(agentPF, spawnPoint.transform.position, Quaternion.identity);
+                GameObject agent = Instantiate(agentPF, p1spawnPoint.transform.position, Quaternion.identity);
                 PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
                 agentSc.SpawnRightSideP1();
-                currentTimeRight = 0;
+                currentP1TimeRight = 0;
+            }
+        }
+
+        //SPAWN P2'S LEFT SIDE
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (currentP2TimeLeft > cd)
+            {
+                GameObject agent = Instantiate(agentPF, p2spawnPoint.transform.position, Quaternion.identity);
+                PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
+                agentSc.SpawnLeftSideP2();
+                currentP2TimeLeft = 0;
+            }
+        }
+
+        //SPAWN P2'S RIGHT SIDE
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (currentP2TimeRight > cd)
+            {
+                GameObject agent = Instantiate(agentPF, p2spawnPoint.transform.position, Quaternion.identity);
+                PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
+                agentSc.SpawnRightSideP2();
+                currentP2TimeRight = 0;
             }
         }
     }
