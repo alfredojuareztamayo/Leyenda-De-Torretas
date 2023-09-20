@@ -86,4 +86,8 @@ public class StatsTower : MonoBehaviour
             return;
         }
     }
+    public int GetLevel()
+    {
+        return nvl;
+    }
 }

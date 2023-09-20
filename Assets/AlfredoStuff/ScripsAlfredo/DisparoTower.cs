@@ -12,30 +12,29 @@ public class DisparoTower : MonoBehaviour
     public Transform targetArrow;
     private Rigidbody rb;
     private GameObject newArrow;
+    private List<GameObject> arrowList = new List<GameObject>();
 
 
 
     private void Update()
     {
-        if (targetArrow != null)
-        {
-            if (Time.time - timeLastShoot >= coldDownShoot)
-            {
-                newArrow = Instantiate(arrowPrefab, originOfFire.position, Quaternion.identity);
-                rb = newArrow.GetComponent<Rigidbody>();
-
-                timeLastShoot = Time.time;
-            }
-            if (rb != null)
-            {
-                rb.velocity = SteeringBHAlfredoArrow.Seek(newArrow.transform, targetArrow.position);
-            }
-            targetArrow = null;
-        }
+       
+                
+        
     }
     public void ShootArrow()
     {
          targetArrow = GetComponent<TowerPerceptionAndDecision>().target;
-       // Rigidbody rb = newArrow.GetComponent<Rigidbody>();
+        // Rigidbody rb = newArrow.GetComponent<Rigidbody>();
+        if (Time.time - timeLastShoot >= coldDownShoot)
+        {
+            newArrow = Instantiate(arrowPrefab, originOfFire.position, Quaternion.identity);
+            rb = newArrow.GetComponent<Rigidbody>();
+            timeLastShoot = Time.time;
+        }
+        if (rb != null)
+        {
+            rb.velocity = SteeringBHAlfredoArrow.Seek(newArrow.transform, targetArrow.position);
+        }
     }
 }

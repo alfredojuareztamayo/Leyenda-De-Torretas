@@ -11311,7 +11311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399162558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: 0.676517, z: 1.47}
+  m_LocalPosition: {x: 0.19, y: 0.676517, z: 0.99}
   m_LocalScale: {x: 0.5330515, y: 0.5330515, z: 0.5330515}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12581,7 +12581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &6238594119374451667
 GameObject:
   m_ObjectHideFlags: 0
@@ -12741,3 +12741,4 @@ MonoBehaviour:
   originOfFire: {fileID: 967262166}
   speedArrow: 3
   coldDownShoot: 2
+  targetArrow: {fileID: 0}
