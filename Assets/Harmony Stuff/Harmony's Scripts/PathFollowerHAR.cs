@@ -89,7 +89,7 @@ public class PathFollowerHAR : AgentBasicHAR
     }
 
     //ASSIGN PAATH FOLLOWWING FOR PLAYER 2'S LEFT SIDE
-    public void SpawnLeftSideP2()
+    public void SpawnRightSideP2()
     {
         waypoints.Add(new Vector3(305.369995f, 0.25f, 489.529999f));
         waypoints.Add(new Vector3(391.450012f, 0.25f, 404.980011f));
@@ -100,7 +100,7 @@ public class PathFollowerHAR : AgentBasicHAR
     }
 
     //ASSIGN PATH FOLLOWING FOR PLAYER 2'S RIGHT SIDE
-    public void SpawnRightSideP2()
+    public void SpawnLeftSideP2()
     {
         waypoints.Add(new Vector3(305.369995f, 0.25f, 511.529999f));
         waypoints.Add(new Vector3(390.559998f, 0.25f, 595.030029f));
