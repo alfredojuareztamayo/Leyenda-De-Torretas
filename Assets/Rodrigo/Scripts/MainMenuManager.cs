@@ -24,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
         m_loadPanel.SetActive(true);
         m_mainMenuPanel.SetActive(false);
         m_creditsPanel.SetActive(false);
+        Debug.Log(GameManager.Instance);
         StartCoroutine(loadSceneRutine(GameManager.Instance.LoadLevel(scene)));
     }
 
