@@ -15,6 +15,7 @@ public class AgentBasicHAR : MonoBehaviour
     protected Transform m_target;
     protected Transform m_ally;
     private AgentState m_agentState;
+    
 
     /// <summary>
     /// Called once per frame.
@@ -90,7 +91,7 @@ public class AgentBasicHAR : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         health -= dmg;
-        effect.Play();
+        //effect.Play();
     }
 
     /// <summary>

@@ -7,10 +7,30 @@ public class PathFollowerHAR : AgentBasicHAR
 {
     public List<Vector3> waypoints = new List<Vector3>();
     Rigidbody m_rgbd;
+    Collider[] eyesPerceived;
+    int p1LayerID = 10;
+    int p2LayerID = 11;
+    int layerMask = 1;
+    bool inRange = false;
+    bool CoroutineOff = true;
+    public bool player1 = false;
+    public bool player2 = false;
+    int dmg = 1;
+    public GameObject wpnArea;
 
     void Start()
     {
         m_rgbd = GetComponent<Rigidbody>();
+        if (player1 == true)
+        {
+            gameObject.tag = "Player1";
+            gameObject.layer = LayerMask.NameToLayer("Player1");
+        }
+        if (player2 == true)
+        {
+            gameObject.tag = "Player2";
+            gameObject.layer = LayerMask.NameToLayer("Player2");
+        }
     }
 
     /// <summary>
@@ -18,6 +38,14 @@ public class PathFollowerHAR : AgentBasicHAR
     /// </summary>
     void Update()
     {
+        if (player1 == true)
+        {
+            eyesPerceived = Physics.OverlapSphere(m_eyesPerceptionPos.position, m_eyesPerceptionRad, layerMask << p2LayerID);
+        }
+        if (player2 == true)
+        {
+            eyesPerceived = Physics.OverlapSphere(m_eyesPerceptionPos.position, m_eyesPerceptionRad, layerMask << p1LayerID);
+        }
         PerceptionManager();
         DecisionManager();
     }
@@ -32,13 +60,46 @@ public class PathFollowerHAR : AgentBasicHAR
     /// </summary>
     void PerceptionManager()
     {
-
+        if (eyesPerceived == null)
+        {
+            return;
+        }
+        if (eyesPerceived != null)
+        {
+            foreach (Collider eyesP in eyesPerceived)
+            {
+                if (eyesP.tag == "Player2" || eyesP.tag == "Player1")
+                {
+                    Debug.Log("Enemy found.");
+                    m_target = eyesP.transform;
+                }
+            }
+            if (eyesPerceived.Length == 0)
+            {
+                m_target = null;
+            }
+        }
+        eyesPerceived = null;
     }
 
     void DecisionManager()
     {
-        ChangeAgentState(AgentState.PathFollowing);
-        MovementManager();
+        if (m_target != null)
+        {
+            ChangeAgentState(AgentState.Seeking);
+            MovementManager();
+            if (CoroutineOff)
+            {
+                ActionManager();
+                CoroutineOff = false;
+            }
+        }
+        else
+        {
+            CoroutineOff = true;
+            ChangeAgentState(AgentState.PathFollowing);
+            MovementManager();
+        }
     }
 
     void MovementManager()
@@ -63,6 +124,69 @@ public class PathFollowerHAR : AgentBasicHAR
                 m_rgbd.velocity = SteeringBehavioursHAR.pathFollowing(transform, waypoints);
                 SteeringBehavioursHAR.lookAt(transform);
                 break;
+        }
+    }
+
+    void ActionManager()
+    {
+        //Stuff like shoot, heal and so on.
+        //StartCoroutine(MeeleAttack());
+    }
+
+    public IEnumerator MeeleAttack()
+    {
+        while (inRange)
+        {
+            Debug.Log("YOOOOOO");
+            wpnArea.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            wpnArea.SetActive(false);
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (player1 == true)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(m_eyesPerceptionPos.position, m_eyesPerceptionRad);
+        }
+        if (player2 == true)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(m_eyesPerceptionPos.position, m_eyesPerceptionRad);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player2" && player1 == true)
+        {
+            AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
+            TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
+            if(target)
+            {
+                target.TakeDamage(dmg);
+            }
+            if(tower)
+            {
+                tower.TakeDamage(dmg);
+            }
+
+        }
+        if (other.tag == "Player1" && player2 == true)
+        {
+            AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
+            TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
+            if(target)
+            {
+                target.TakeDamage(dmg);
+            }
+            if(tower)
+            {
+                tower.TakeDamage(dmg);
+            }
         }
     }
 
