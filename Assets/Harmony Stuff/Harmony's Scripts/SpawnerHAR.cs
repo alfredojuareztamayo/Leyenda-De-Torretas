@@ -50,20 +50,8 @@ public class SpawnerHAR : MonoBehaviour
             }
         }
 
-        //SPAWN P2'S LEFT SIDE
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if (currentP2TimeLeft > cd)
-            {
-                GameObject agent = Instantiate(agentPF, p2spawnPoint.transform.position, Quaternion.identity);
-                PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
-                agentSc.SpawnLeftSideP2();
-                currentP2TimeLeft = 0;
-            }
-        }
-
         //SPAWN P2'S RIGHT SIDE
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             if (currentP2TimeRight > cd)
             {
@@ -71,6 +59,18 @@ public class SpawnerHAR : MonoBehaviour
                 PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
                 agentSc.SpawnRightSideP2();
                 currentP2TimeRight = 0;
+            }
+        }
+
+        //SPAWN P2'S LEFT SIDE
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (currentP2TimeLeft > cd)
+            {
+                GameObject agent = Instantiate(agentPF, p2spawnPoint.transform.position, Quaternion.identity);
+                PathFollowerHAR agentSc = agent.GetComponent<PathFollowerHAR>();
+                agentSc.SpawnLeftSideP2();
+                currentP2TimeLeft = 0;
             }
         }
     }
