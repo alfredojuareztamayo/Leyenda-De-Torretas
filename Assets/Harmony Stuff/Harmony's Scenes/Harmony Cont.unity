@@ -218,15 +218,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1973756881}
-    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1973756880}
     - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1973756882}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1973756885}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
 --- !u!1 &26198727
 GameObject:
@@ -1746,10 +1746,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1603630865244391633, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8042294457591116836, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
       propertyPath: m_text
       value: N
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294457749873965, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8042294458019173259, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
@@ -1876,10 +1886,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8042294459400981366, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8042294459404182863, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
       propertyPath: m_text
       value: M
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294459427134788, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294459474173771, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2124939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6473,10 +6498,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1603630865244391633, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8042294457591116836, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
       propertyPath: m_text
       value: X
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294457749873965, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8042294458019173259, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
@@ -6603,10 +6638,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8042294459400981366, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8042294459404182863, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
       propertyPath: m_text
       value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294459427134788, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042294459474173771, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2124939
       objectReference: {fileID: 0}
     - target: {fileID: 8042294459655708912, guid: 793d4bad0ed32a04ba6a8b8ba279fda5,
         type: 3}
@@ -11099,7 +11149,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &1973756881
+--- !u!114 &1973756882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 250
+--- !u!65 &1973756885
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11114,25 +11177,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1973756882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973756877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 250
+  m_Size: {x: 0.69369, y: 0.97847503, z: 0.68826807}
+  m_Center: {x: -0.0022354126, y: 0.49115703, z: 0.0017623901}
 --- !u!1 &1977082736
 GameObject:
   m_ObjectHideFlags: 0
@@ -11751,7 +11801,7 @@ GameObject:
   - component: {fileID: 2064124909}
   - component: {fileID: 2064124908}
   - component: {fileID: 2064124907}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player 1
   m_TagString: Player1
   m_Icon: {fileID: 0}
