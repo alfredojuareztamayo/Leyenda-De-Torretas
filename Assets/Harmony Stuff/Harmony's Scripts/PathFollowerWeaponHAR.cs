@@ -34,6 +34,8 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             collidersInRange.Add(other);
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
+            NexusHAR nexus = other.GetComponent<NexusHAR>();
+
             if (target)
             {
                 target.TakeDamage(dmg);
@@ -41,6 +43,10 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             if (tower)
             {
                 tower.TakeDamage(dmgToTower);
+            }
+            if(nexus)
+            {
+                nexus.TakeDamage(dmgToTower);
             }
 
         }
@@ -49,6 +55,8 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             collidersInRange.Add(other);
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
+            NexusHAR nexus = other.GetComponent<NexusHAR>();
+
             if (target)
             {
                 target.TakeDamage(dmg);
@@ -56,6 +64,10 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             if (tower)
             {
                 tower.TakeDamage(dmgToTower);
+            }
+            if(nexus)
+            {
+                nexus.TakeDamage(dmgToTower);
             }
         }
     }
