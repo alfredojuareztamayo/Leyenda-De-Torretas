@@ -93,7 +93,6 @@ public class SteeringBehavioursHAR
 
         Vector3 wanderForce = circleCenter+displacement;
         return seek(agent, wanderForce);
-        
     }
 
     public static void setAngle(Vector3 v, float n)

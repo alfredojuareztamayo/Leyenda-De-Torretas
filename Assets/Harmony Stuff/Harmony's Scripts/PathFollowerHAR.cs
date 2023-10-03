@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,15 +13,16 @@ public class PathFollowerHAR : AgentBasicHAR
     int p2LayerID = 11;
     int layerMask = 1;
     bool inRange = false;
-    bool CoroutineOff = true;
+    bool coroutineOff = true;
     public bool player1 = false;
     public bool player2 = false;
     int dmg = 1;
     public GameObject wpnArea;
-
+    PathFollowerWeaponHAR wpn;
     void Start()
     {
         m_rgbd = GetComponent<Rigidbody>();
+
         if (player1 == true)
         {
             gameObject.tag = "Player1";
@@ -38,6 +40,7 @@ public class PathFollowerHAR : AgentBasicHAR
     /// </summary>
     void Update()
     {
+        Debug.Log(inRange);
         if (player1 == true)
         {
             eyesPerceived = Physics.OverlapSphere(m_eyesPerceptionPos.position, m_eyesPerceptionRad, layerMask << p2LayerID);
@@ -48,11 +51,19 @@ public class PathFollowerHAR : AgentBasicHAR
         }
         PerceptionManager();
         DecisionManager();
-    }
-
-    void FixedUpdate()
-    {
-
+        InRangeBehaviour();
+        wpn = GetComponentInChildren<PathFollowerWeaponHAR>();
+        if (wpn == null)
+        {
+            return;
+        }
+        else
+        {
+            if (wpn.collidersInRange.Count == 0)
+            {
+                inRange = false;
+            }
+        }
     }
 
     /// <summary>
@@ -84,21 +95,30 @@ public class PathFollowerHAR : AgentBasicHAR
 
     void DecisionManager()
     {
-        if (m_target != null)
+        if (m_target == null)
         {
-            ChangeAgentState(AgentState.Seeking);
-            MovementManager();
-            if (CoroutineOff)
-            {
-                ActionManager();
-                CoroutineOff = false;
-            }
-        }
-        else
-        {
-            CoroutineOff = true;
             ChangeAgentState(AgentState.PathFollowing);
             MovementManager();
+        }
+        if (m_target != null)
+        {
+            if (inRange)
+            {
+                ChangeAgentState(AgentState.None);
+                MovementManager();
+                if (coroutineOff)
+                {
+                    ActionManager();
+                    coroutineOff = false;
+                }
+            }
+            else
+            {
+                Debug.Log("I am the one wwho seeks!");
+                coroutineOff = true;
+                ChangeAgentState(AgentState.Seeking);
+                MovementManager();
+            }
         }
     }
 
@@ -107,8 +127,11 @@ public class PathFollowerHAR : AgentBasicHAR
         switch (GetAgentState())
         {
             case AgentState.None:
+                Debug.Log("I am gonna stop.");
+                this.transform.LookAt(m_target);
                 break;
             case AgentState.Seeking:
+                Debug.Log("I am gonna seek.");
                 m_rgbd.velocity = SteeringBehavioursHAR.seek(transform, m_target.position);
                 SteeringBehavioursHAR.lookAt(transform);
                 break;
@@ -130,19 +153,35 @@ public class PathFollowerHAR : AgentBasicHAR
     void ActionManager()
     {
         //Stuff like shoot, heal and so on.
-        //StartCoroutine(MeeleAttack());
+        StartCoroutine(MeeleAttack());
     }
 
     public IEnumerator MeeleAttack()
     {
         while (inRange)
         {
-            Debug.Log("YOOOOOO");
             wpnArea.SetActive(true);
             yield return new WaitForSeconds(0.5f);
             wpnArea.SetActive(false);
             yield return new WaitForSeconds(1.5f);
         }
+    }
+
+    public void InRangeBehaviour()
+    {
+        if (m_target == null)
+        {
+            return;
+        }
+        float dist = FormulesHAR.Dist(transform.position, m_target.transform.position);
+        //Debug.Log(dist);
+        if (dist < 3)
+        {
+            inRange = true;
+            return;
+
+        }
+        inRange = false;
     }
 
     private void OnDrawGizmos()
@@ -159,17 +198,19 @@ public class PathFollowerHAR : AgentBasicHAR
         }
     }
 
+    //OBSOLETE
+    /*
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player2" && player1 == true)
         {
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
-            if(target)
+            if (target)
             {
                 target.TakeDamage(dmg);
             }
-            if(tower)
+            if (tower)
             {
                 tower.TakeDamage(dmg);
             }
@@ -179,16 +220,17 @@ public class PathFollowerHAR : AgentBasicHAR
         {
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
-            if(target)
+            if (target)
             {
                 target.TakeDamage(dmg);
             }
-            if(tower)
+            if (tower)
             {
                 tower.TakeDamage(dmg);
             }
         }
     }
+    */
 
     //ASSIGN PATH FOLLOWING FOR PLAYER 1'S LEFT SIDE
     public void SpawnLeftSideP1()
