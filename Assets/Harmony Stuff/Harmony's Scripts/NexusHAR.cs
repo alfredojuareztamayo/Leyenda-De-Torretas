@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NexusHAR : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class NexusHAR : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(gameObject, 1);
+            SceneManager.LoadScene("Win");
         }
     }
 }
