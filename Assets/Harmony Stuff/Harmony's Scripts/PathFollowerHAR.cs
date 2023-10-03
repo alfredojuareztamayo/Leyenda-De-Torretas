@@ -81,7 +81,6 @@ public class PathFollowerHAR : AgentBasicHAR
             {
                 if (eyesP.tag == "Player2" || eyesP.tag == "Player1")
                 {
-                    Debug.Log("Enemy found.");
                     m_target = eyesP.transform;
                 }
             }
@@ -114,7 +113,7 @@ public class PathFollowerHAR : AgentBasicHAR
             }
             else
             {
-                Debug.Log("I am the one wwho seeks!");
+                Debug.Log("I am the one who seeks!");
                 coroutineOff = true;
                 ChangeAgentState(AgentState.Seeking);
                 MovementManager();

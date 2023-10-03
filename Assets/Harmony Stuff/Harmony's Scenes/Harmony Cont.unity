@@ -320,7 +320,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1973756885}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1973756886}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &4983894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4983893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &26198727
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +930,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 891344787}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 891344788}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &55861568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 55861567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &69431305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,7 +1139,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 757549203}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757549204}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &117041748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 117041747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &143207626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1549431047095804266, guid: eca7aa4c26c28454bb4dd3ae0b13c487,
@@ -2460,7 +2490,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 387147528}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 387147528}
+  hp: 400
+--- !u!114 &363909708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363909702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1001 &366872360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2791,7 +2865,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 363909707}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 363909708}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &387147528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 387147527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415886951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4353,7 +4437,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 117041748}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 117041748}
+  hp: 400
+--- !u!114 &757549204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757549198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1 &768482665
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,7 +5378,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 55861568}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 55861568}
+  hp: 400
+--- !u!114 &891344788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891344782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1001 &895385340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5355,7 +5527,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1474754606}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1474754607}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &895385341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 895385340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &902569600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 902569600, guid: 76b2784ac511a704590c8875242f9fa9,
@@ -5571,7 +5753,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1619177673}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1619177674}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &963797131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 963797130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &967758608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3160499688414153511, guid: b74080c501552fd4c9970add9fc707fa,
@@ -6303,7 +6495,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 1264422546}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 1264422546}
+  hp: 400
+--- !u!114 &1144733211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144733205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1001 &1151090009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7439,7 +7675,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1144733210}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1144733211}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &1264422546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1264422545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1268893194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8856,7 +9102,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 895385341}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 895385341}
+  hp: 400
+--- !u!114 &1474754607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474754601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1001 &1499094457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9477,7 +9767,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 963797131}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 963797131}
+  hp: 400
+--- !u!114 &1619177674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619177668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!4 &1619646257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2030440309093517554, guid: bb96a129de5586241a425d6bcf8f1f6f,
@@ -10664,7 +10998,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1914081219}
+    - targetCorrespondingSourceObject: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914081220}
   m_SourcePrefab: {fileID: 100100000, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
+--- !u!4 &1747946662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 440698, guid: 77a599bd67f72e24999e1d5d60f433d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747946661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1765201141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11313,7 +11657,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 1747946662}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 1747946662}
+  hp: 400
+--- !u!114 &1914081220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914081214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1001 &1934062619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11635,7 +12023,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2286ef53ade22d04ab473174bcfb9cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 15
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 4983894}
+  player1: 0
+  player2: 0
+  bullet: {fileID: 1121568253247328642, guid: 942a7c9343a558444b4c60d3bf362a6a, type: 3}
+  bulletPF: {fileID: 4983894}
+  hp: 400
 --- !u!65 &1973756885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11657,6 +12063,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.69369, y: 0.97847503, z: 0.68826807}
   m_Center: {x: -0.0022354126, y: 0.49115703, z: 0.0017623901}
+--- !u!114 &1973756886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973756877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxVel: 0
+  m_maxSteerForce: 0
+  m_maxSpeed: 0
+  m_slowingRadius: 0
+  m_wanderRadius: 0
+  m_wanderDistance: 0
+  m_wanderAngle: 0
+  m_wanderAngleCR: 0
+  m_pfRadius: 0
+  m_leaderDist: 0
+  m_eyesPerceptionRad: 0
+  health: 400
+  effect: {fileID: 0}
+  m_eyesPerceptionPos: {fileID: 0}
 --- !u!1 &1977082736
 GameObject:
   m_ObjectHideFlags: 0
