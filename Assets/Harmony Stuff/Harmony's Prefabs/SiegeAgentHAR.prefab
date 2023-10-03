@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 6021459016575343520}
   - component: {fileID: 6021459016575343521}
   - component: {fileID: 6021459016575343526}
-  - component: {fileID: 6021459016575343527}
+  - component: {fileID: 5825320782266628383}
   m_Layer: 0
-  m_Name: CapsuleHAR
+  m_Name: SiegeAgentHAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4ad114b2e1caf2446bb155e40bf17093, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193,10 +193,10 @@ MonoBehaviour:
   m_pfRadius: 2
   m_leaderDist: 0
   m_eyesPerceptionRad: 0
-  health: 100
+  health: 250
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 0}
---- !u!114 &6021459016575343527
+--- !u!114 &5825320782266628383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6021459016575343524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f389cc34a3c7341bf6d8a08e26b953, type: 3}
+  m_Script: {fileID: 11500000, guid: 70b4d39e897b0af4489ac1851bcdf8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxVel: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_wanderAngleCR: 0
   m_pfRadius: 0
   m_leaderDist: 0
-  m_eyesPerceptionRad: 10
+  m_eyesPerceptionRad: 8
   health: 0
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 165453478338874365}
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6553272661143211969}
   - component: {fileID: 3648896227088174995}
-  - component: {fileID: 2718169083160525154}
+  - component: {fileID: 8178060463512977404}
   m_Layer: 0
   m_Name: MeeleWeapon
   m_TagString: Untagged
@@ -281,7 +281,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2718169083160525154
+--- !u!114 &8178060463512977404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,11 +290,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6668080053506933883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1296c1d60147f419c287eded0f6396, type: 3}
+  m_Script: {fileID: 11500000, guid: a68e24e053c97e448991db2ed0261fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   c_player1: 0
   c_player2: 0
+  collidersInRange: []
 --- !u!1 &7058376452959139123
 GameObject:
   m_ObjectHideFlags: 0

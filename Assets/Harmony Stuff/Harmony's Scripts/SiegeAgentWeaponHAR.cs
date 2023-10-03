@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathFollowerWeaponHAR : MonoBehaviour
+public class SiegeAgentWeaponHAR : MonoBehaviour
 {
     public bool c_player1 = false;
     public bool c_player2 = false;
     public List<Collider> collidersInRange = new List<Collider>();
-    int dmg = 30;
-    int dmgToTower = 8;
+    int dmg = 10;
+    int dmgToTower = 35;
 
     void Start()
     {
-        PathFollowerHAR parentTeam = GetComponentInParent<PathFollowerHAR>();
+        SiegeAgentHAR parentTeam = GetComponentInParent<SiegeAgentHAR>();
         if(parentTeam.player1 == true)
         {
             c_player1 = true;

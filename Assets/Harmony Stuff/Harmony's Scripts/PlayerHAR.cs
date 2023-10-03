@@ -7,6 +7,8 @@ public class PlayerHAR : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     public GameObject agent1;
+    public GameObject agent2;
+    public GameObject agent3;
     public GameObject p1spawnPoint;
     public GameObject p2spawnPoint;
     float cd = 1;
@@ -158,6 +160,36 @@ public class PlayerHAR : MonoBehaviour
                 money -= agent1Cost;
             }
         }
+
+        //SPAWNING AGENT 3
+
+        //Spawn on P1's left side.
+        if (Input.GetKeyDown(KeyCode.Q) && Input.GetKey(KeyCode.C))
+        {
+            if (currentP1TimeLeft > cd && money > agent1Cost)
+            {
+                GameObject agent = Instantiate(agent3, p1spawnPoint.transform.position, Quaternion.identity);
+                SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
+                agentSc.player1 = true;
+                agentSc.SpawnLeftSideP1();
+                currentP1TimeLeft = 0;
+                money -= agent3Cost;
+            }
+        }
+
+        //SPAWN on P1's right side.
+        if (Input.GetKeyDown(KeyCode.E) && Input.GetKey(KeyCode.C))
+        {
+            if (currentP1TimeRight > cd && money > agent1Cost)
+            {
+                GameObject agent = Instantiate(agent3, p1spawnPoint.transform.position, Quaternion.identity);
+                SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
+                agentSc.player1 = true;
+                agentSc.SpawnRightSideP1();
+                currentP1TimeRight = 0;
+                money -= agent3Cost;
+            }
+        }
     }
 
     private void Player2SpawnAgents()
@@ -194,6 +226,36 @@ public class PlayerHAR : MonoBehaviour
                 agentSc.SpawnLeftSideP2();
                 currentP2TimeLeft = 0;
                 money -= agent1Cost;
+            }
+        }
+
+        //SPAWNING AGENT 3
+
+        //Spawn on P1's left side.
+        if (Input.GetKeyDown(KeyCode.I) && Input.GetKey(KeyCode.M))
+        {
+            if (currentP2TimeLeft > cd && money > agent1Cost)
+            {
+                GameObject agent = Instantiate(agent3, p2spawnPoint.transform.position, Quaternion.identity);
+                SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
+                agentSc.player2 = true;
+                agentSc.SpawnLeftSideP2();
+                currentP2TimeLeft = 0;
+                money -= agent3Cost;
+            }
+        }
+
+        //SPAWN on P1's right side.
+        if (Input.GetKeyDown(KeyCode.P) && Input.GetKey(KeyCode.M))
+        {
+            if (currentP2TimeRight > cd && money > agent1Cost)
+            {
+                GameObject agent = Instantiate(agent3, p2spawnPoint.transform.position, Quaternion.identity);
+                SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
+                agentSc.player2 = true;
+                agentSc.SpawnRightSideP2();
+                currentP2TimeRight = 0;
+                money -= agent3Cost;
             }
         }
     }
