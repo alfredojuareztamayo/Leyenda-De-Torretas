@@ -11,7 +11,7 @@ public class PlayerHAR : MonoBehaviour
     public GameObject agent3;
     public GameObject p1spawnPoint;
     public GameObject p2spawnPoint;
-    float cd = 1;
+    float cd = 0.6f;
     float currentP1TimeRight;
     float currentP1TimeLeft;
     float currentP2TimeRight;
@@ -200,7 +200,6 @@ public class PlayerHAR : MonoBehaviour
         currentP2TimeRight += Time.deltaTime;
 
         //SPAWNING AGENT 1.
-
         //Spawn on P2's right side.
         if (Input.GetKeyDown(KeyCode.P) && Input.GetKey(KeyCode.B))
         {
@@ -230,7 +229,6 @@ public class PlayerHAR : MonoBehaviour
         }
 
         //SPAWNING AGENT 3
-
         //Spawn on P1's left side.
         if (Input.GetKeyDown(KeyCode.I) && Input.GetKey(KeyCode.M))
         {

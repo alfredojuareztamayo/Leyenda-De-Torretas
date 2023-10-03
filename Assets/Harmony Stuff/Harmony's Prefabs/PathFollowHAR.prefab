@@ -182,9 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9706cf7f887d94db9889463e4be5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxVel: 5
+  m_maxVel: 12
   m_maxSteerForce: 0.5
-  m_maxSpeed: 5
+  m_maxSpeed: 12
   m_slowingRadius: 0
   m_wanderRadius: 0
   m_wanderDistance: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   c_player1: 0
   c_player2: 0
+  collidersInRange: []
 --- !u!1 &7058376452959139123
 GameObject:
   m_ObjectHideFlags: 0
