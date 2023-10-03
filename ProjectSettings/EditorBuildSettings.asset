@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AlfredoStuff/Alfredo.unity
     guid: af0bd3937df2c7442b4c801d2c0d7477
+  - enabled: 1
+    path: Assets/Alfredo3/ScenesWinLose/Win.unity
+    guid: 3c5e5231e646dd34286899d92956a352
   m_configObjects: {}
