@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PathFollowerWeaponHAR : MonoBehaviour
@@ -35,6 +36,7 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
             NexusHAR nexus = other.GetComponent<NexusHAR>();
+            PlayerHAR player = other.GetComponent<PlayerHAR>();
 
             if (target)
             {
@@ -47,6 +49,10 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             if(nexus)
             {
                 nexus.TakeDamage(dmgToTower);
+            }
+            if(player)
+            {
+                player.TakeDamage(dmg);
             }
 
         }
@@ -56,6 +62,7 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
             NexusHAR nexus = other.GetComponent<NexusHAR>();
+            PlayerHAR player = other.GetComponent<PlayerHAR>();
 
             if (target)
             {
@@ -68,6 +75,10 @@ public class PathFollowerWeaponHAR : MonoBehaviour
             if(nexus)
             {
                 nexus.TakeDamage(dmgToTower);
+            }
+            if (player)
+            {
+                player.TakeDamage(dmg);
             }
         }
     }

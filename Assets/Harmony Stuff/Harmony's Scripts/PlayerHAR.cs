@@ -11,6 +11,7 @@ public class PlayerHAR : MonoBehaviour
     public GameObject agent3;
     public GameObject p1spawnPoint;
     public GameObject p2spawnPoint;
+    public GameObject dieRespawn;
     float cd = 0.6f;
     float currentP1TimeRight;
     float currentP1TimeLeft;
@@ -22,7 +23,7 @@ public class PlayerHAR : MonoBehaviour
     bool player2;
     float vel = 8;
     //[SerializeField] Transform cam;
-    float hp = 100;
+    public float hp = 400;
     [SerializeField] int money = 1000;
     int agent1Cost = 50;
     int agent2Cost = 100;
@@ -258,7 +259,7 @@ public class PlayerHAR : MonoBehaviour
         }
     }
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         hp -= dmg;
     }
@@ -267,7 +268,10 @@ public class PlayerHAR : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject, 1.5f);
+            gameObject.SetActive(false);
+            gameObject.transform.position = dieRespawn.transform.position;
+            gameObject.SetActive(true);
+            hp = 100;
         }
     }
 

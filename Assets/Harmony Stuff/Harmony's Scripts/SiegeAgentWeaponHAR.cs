@@ -35,6 +35,7 @@ public class SiegeAgentWeaponHAR : MonoBehaviour
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
             NexusHAR nexus = other.GetComponent<NexusHAR>();
+            PlayerHAR player = other.GetComponent<PlayerHAR>();
 
             if (target)
             {
@@ -47,6 +48,10 @@ public class SiegeAgentWeaponHAR : MonoBehaviour
             if(nexus)
             {
                 nexus.TakeDamage(dmgToTower);
+            }
+            if (player)
+            {
+                player.TakeDamage(dmg);
             }
 
         }
@@ -56,6 +61,7 @@ public class SiegeAgentWeaponHAR : MonoBehaviour
             AgentBasicHAR target = other.GetComponent<AgentBasicHAR>();
             TowerPoorLogicHAR tower = other.GetComponent<TowerPoorLogicHAR>();
             NexusHAR nexus = other.GetComponent<NexusHAR>();
+            PlayerHAR player = other.GetComponent<PlayerHAR>();
 
             if (target)
             {
@@ -68,6 +74,10 @@ public class SiegeAgentWeaponHAR : MonoBehaviour
             if(nexus)
             {
                 nexus.TakeDamage(dmgToTower);
+            }
+            if (player)
+            {
+                player.TakeDamage(dmg);
             }
         }
     }

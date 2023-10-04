@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7283ab117d0c7394d8741ec00fd28a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxVel: 8
+  m_maxVel: 10
   m_maxSteerForce: 1
-  m_maxSpeed: 8
+  m_maxSpeed: 10
   m_slowingRadius: 0
   m_wanderRadius: 0
   m_wanderDistance: 0

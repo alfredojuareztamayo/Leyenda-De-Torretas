@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 387147528}
   player1: 0
@@ -3940,7 +3940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 84, y: -29}
+  m_AnchoredPosition: {x: 84, y: -29.000004}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &642079710
@@ -4081,7 +4081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 13, y: 8}
+  m_AnchoredPosition: {x: 12.999999, y: 8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723316258
@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 117041748}
   player1: 0
@@ -5224,6 +5224,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &870489026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870489027}
+  m_Layer: 0
+  m_Name: DieRespawnP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &870489027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870489026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 687.65, y: 1.4, z: 507.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &880017701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5389,7 +5420,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 55861568}
   player1: 0
@@ -5811,7 +5842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 13, y: 7}
+  m_AnchoredPosition: {x: 12.999999, y: 7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000558055
@@ -6506,7 +6537,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 1264422546}
   player1: 0
@@ -8222,6 +8253,8 @@ MonoBehaviour:
   agent3: {fileID: 6021459016575343524, guid: 79628d1b44fcff44f8a02ebfc58ba1d5, type: 3}
   p1spawnPoint: {fileID: 297767000}
   p2spawnPoint: {fileID: 2042835124}
+  dieRespawn: {fileID: 1541019245}
+  hp: 100
   money: 1000
   moneyDisplay: {fileID: 343020428}
 --- !u!54 &1339211299
@@ -9113,7 +9146,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 895385341}
   player1: 0
@@ -9329,6 +9362,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1526999569}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1541019245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541019246}
+  m_Layer: 0
+  m_Name: DieRespawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541019246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541019245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 307.428, y: 1.85, z: 502.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 46
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1544296816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9778,7 +9842,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 963797131}
   player1: 0
@@ -11668,7 +11732,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 1747946662}
   player1: 0
@@ -12034,7 +12098,7 @@ MonoBehaviour:
   m_pfRadius: 0
   m_leaderDist: 0
   m_eyesPerceptionRad: 15
-  health: 400
+  health: 600
   effect: {fileID: 0}
   m_eyesPerceptionPos: {fileID: 4983894}
   player1: 0
@@ -12732,6 +12796,8 @@ MonoBehaviour:
   agent3: {fileID: 6021459016575343524, guid: 79628d1b44fcff44f8a02ebfc58ba1d5, type: 3}
   p1spawnPoint: {fileID: 297767000}
   p2spawnPoint: {fileID: 2042835124}
+  dieRespawn: {fileID: 870489026}
+  hp: 100
   money: 1000
   moneyDisplay: {fileID: 1262529780}
 --- !u!54 &2064124908
@@ -12970,7 +13036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 83, y: -30.000006}
+  m_AnchoredPosition: {x: 83, y: -30.000008}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091353674
