@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3940,7 +3940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 84, y: -29.000004}
+  m_AnchoredPosition: {x: 84, y: -29.000008}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &642079710
@@ -4081,7 +4081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 12.999999, y: 8}
+  m_AnchoredPosition: {x: 13, y: 8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723316258
@@ -5842,7 +5842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 12.999999, y: 7}
+  m_AnchoredPosition: {x: 13, y: 7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000558055
@@ -8228,7 +8228,7 @@ GameObject:
   - component: {fileID: 1339211300}
   - component: {fileID: 1339211299}
   - component: {fileID: 1339211298}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player 2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -13036,7 +13036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.13317001}
   m_AnchorMax: {x: 0.28333336, y: 0.54732007}
-  m_AnchoredPosition: {x: 83, y: -30.000008}
+  m_AnchoredPosition: {x: 83, y: -30.000013}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091353674
