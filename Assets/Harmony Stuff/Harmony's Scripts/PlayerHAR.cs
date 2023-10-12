@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHAR : MonoBehaviour
 {
+    Animator m_animator;
     [SerializeField] Rigidbody rb;
     public GameObject agent1;
     public GameObject agent2;
@@ -31,10 +32,13 @@ public class PlayerHAR : MonoBehaviour
     float time;
     float timeBeforeMoney = 1;
     public TextMeshProUGUI moneyDisplay;
+    PathFollowerWeaponHAR wpn;
+    public GameObject wpnArea;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_animator = GetComponent<Animator>();
         if (this.tag == "Player1")
         {
             player1 = true;
@@ -46,6 +50,7 @@ public class PlayerHAR : MonoBehaviour
             player1 = false;
         }
         rb = GetComponent<Rigidbody>();
+
     }
     void Update()
     {
@@ -62,6 +67,15 @@ public class PlayerHAR : MonoBehaviour
         {
             Player2SpawnAgents();
         }
+        wpn = GetComponentInChildren<PathFollowerWeaponHAR>();
+        //if(wpn == null) {
+        //    return;
+        //} else {
+        //    if(wpn.collidersInRange.Count == 0) {
+        //        inRange = false;
+        //    }
+        //}
+        Atack();
     }
 
     private void MovementCA()
@@ -77,9 +91,11 @@ public class PlayerHAR : MonoBehaviour
             // Aplica el movimiento al transform del personaje
             transform.Translate(movimiento* vel * Time.deltaTime, Space.World);
 
+            m_animator.SetFloat("run" , movimiento.magnitude);
             if(movimiento != Vector3.zero)
             {
                 transform.forward = movimiento;
+                
             }
             /*
             Vector3 camForward = cam.forward;
@@ -119,6 +135,7 @@ public class PlayerHAR : MonoBehaviour
             // Aplica el movimiento al transform del personaje
             transform.Translate(movimiento* vel * Time.deltaTime, Space.World);
 
+            m_animator.SetFloat("run" , movimiento.magnitude);
             if(movimiento != Vector3.zero)
             {
                 transform.forward = movimiento;
@@ -159,6 +176,32 @@ public class PlayerHAR : MonoBehaviour
                 agentSc.SpawnRightSideP1();
                 currentP1TimeRight = 0;
                 money -= agent1Cost;
+            }
+        }
+
+        //SPAWNING AGENT 2
+
+        //Spawn on P1's left side.
+        if(Input.GetKeyDown(KeyCode.Q) && Input.GetKey(KeyCode.X)) {
+            if(currentP1TimeLeft > cd && money > agent2Cost) {
+                GameObject agent = Instantiate(agent2 , p1spawnPoint.transform.position , Quaternion.identity);
+                AgentArcher agentSc = agent.GetComponent<AgentArcher>();
+                agentSc.player1 = true;
+                agentSc.SpawnLeftSideP1();
+                currentP1TimeLeft = 0;
+                money -= agent2Cost;
+            }
+        }
+
+        //SPAWN on P1's right side.
+        if(Input.GetKeyDown(KeyCode.E) && Input.GetKey(KeyCode.X)) {
+            if(currentP1TimeRight > cd && money > agent2Cost) {
+                GameObject agent = Instantiate(agent2 , p1spawnPoint.transform.position , Quaternion.identity);
+                AgentArcher agentSc = agent.GetComponent<AgentArcher>();
+                agentSc.player1 = true;
+                agentSc.SpawnRightSideP1();
+                currentP1TimeRight = 0;
+                money -= agent2Cost;
             }
         }
 
@@ -229,11 +272,37 @@ public class PlayerHAR : MonoBehaviour
             }
         }
 
+        //SPAWNING AGENT 2
+
+        //Spawn on P2's left side.
+        if(Input.GetKeyDown(KeyCode.P) && Input.GetKey(KeyCode.N)) {
+            if(currentP1TimeLeft > cd && money > agent2Cost) {
+                GameObject agent = Instantiate(agent2 , p2spawnPoint.transform.position , Quaternion.identity);
+                AgentArcher agentSc = agent.GetComponent<AgentArcher>();
+                agentSc.player2 = true;
+                agentSc.SpawnLeftSideP2();
+                currentP2TimeLeft = 0;
+                money -= agent2Cost;
+            }
+        }
+
+        //SPAWN on P2's right side.
+        if(Input.GetKeyDown(KeyCode.I) && Input.GetKey(KeyCode.N)) {
+            if(currentP1TimeRight > cd && money > agent2Cost) {
+                GameObject agent = Instantiate(agent2 , p2spawnPoint.transform.position , Quaternion.identity);
+                AgentArcher agentSc = agent.GetComponent<AgentArcher>();
+                agentSc.player2 = true;
+                agentSc.SpawnRightSideP2();
+                currentP2TimeRight = 0;
+                money -= agent2Cost;
+            }
+        }
+
         //SPAWNING AGENT 3
         //Spawn on P1's left side.
         if (Input.GetKeyDown(KeyCode.I) && Input.GetKey(KeyCode.M))
         {
-            if (currentP2TimeLeft > cd && money > agent1Cost)
+            if (currentP2TimeLeft > cd && money > agent3Cost)
             {
                 GameObject agent = Instantiate(agent3, p2spawnPoint.transform.position, Quaternion.identity);
                 SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
@@ -247,7 +316,7 @@ public class PlayerHAR : MonoBehaviour
         //SPAWN on P1's right side.
         if (Input.GetKeyDown(KeyCode.P) && Input.GetKey(KeyCode.M))
         {
-            if (currentP2TimeRight > cd && money > agent1Cost)
+            if (currentP2TimeRight > cd && money > agent3Cost)
             {
                 GameObject agent = Instantiate(agent3, p2spawnPoint.transform.position, Quaternion.identity);
                 SiegeAgentHAR agentSc = agent.GetComponent<SiegeAgentHAR>();
@@ -262,6 +331,7 @@ public class PlayerHAR : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         hp -= dmg;
+        m_animator.SetTrigger("gethit");
     }
 
     void Die()
@@ -272,6 +342,7 @@ public class PlayerHAR : MonoBehaviour
             gameObject.transform.position = dieRespawn.transform.position;
             gameObject.SetActive(true);
             hp = 100;
+            m_animator.SetTrigger("death");
         }
     }
 
@@ -288,5 +359,26 @@ public class PlayerHAR : MonoBehaviour
             time = 0;
         }
 
+    }
+
+    void Atack() {
+        if(player1 && Input.GetKeyDown(KeyCode.Space)) {
+            StartCoroutine(MeeleAttack());
+        }
+        else if(player2 && Input.GetKeyDown(KeyCode.RightControl)) {
+            StartCoroutine(MeeleAttack());
+        }
+    }
+
+    public IEnumerator MeeleAttack() {
+        if(!m_animator.GetBool("atack")) {
+            wpnArea.SetActive(true);
+            m_animator.SetBool("atack" , true);
+            yield return new WaitForSeconds(0.7f);
+            wpnArea.SetActive(false);
+            m_animator.SetBool("atack" , false);
+            yield return new WaitForSeconds(2.5f);
+        }
+            
     }
 }

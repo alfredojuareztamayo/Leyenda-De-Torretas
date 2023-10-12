@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SiegeAgentHAR : AgentBasicHAR
 {
+    Animator m_animator;
     public List<Vector3> waypoints = new List<Vector3>();
     Rigidbody m_rgbd;
     Collider[] eyesPerceived;
@@ -20,6 +21,7 @@ public class SiegeAgentHAR : AgentBasicHAR
     SiegeAgentWeaponHAR wpn;
     void Start()
     {
+        m_animator = GetComponent<Animator>();
         m_rgbd = GetComponent<Rigidbody>();
 
         if (player1 == true)
@@ -94,6 +96,7 @@ public class SiegeAgentHAR : AgentBasicHAR
 
     void DecisionManager()
     {
+
         if (m_target == null)
         {
             ChangeAgentState(AgentState.PathFollowing);
@@ -147,6 +150,7 @@ public class SiegeAgentHAR : AgentBasicHAR
                 SteeringBehavioursHAR.lookAt(transform);
                 break;
         }
+        m_animator.SetFloat("Speed" , m_rgbd.velocity.magnitude);
     }
 
     void ActionManager()
@@ -160,8 +164,10 @@ public class SiegeAgentHAR : AgentBasicHAR
         while (inRange)
         {
             wpnArea.SetActive(true);
+            m_animator.SetBool("attack", true);
             yield return new WaitForSeconds(0.7f);
             wpnArea.SetActive(false);
+            m_animator.SetBool("attack" , false);
             yield return new WaitForSeconds(2.5f);
         }
     }
@@ -274,4 +280,6 @@ public class SiegeAgentHAR : AgentBasicHAR
         waypoints.Add(new Vector3(610.150024f, 0.25f, 594.780029f));
         waypoints.Add(new Vector3(686.549988f, 0.25f, 522.72998f));
     }
+
+
 }

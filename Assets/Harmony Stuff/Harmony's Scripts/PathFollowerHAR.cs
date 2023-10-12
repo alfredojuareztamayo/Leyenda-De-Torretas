@@ -7,6 +7,7 @@ using UnityEngine;
 public class PathFollowerHAR : AgentBasicHAR
 {
     public List<Vector3> waypoints = new List<Vector3>();
+    Animator m_animator;
     Rigidbody m_rgbd;
     Collider[] eyesPerceived;
     int p1LayerID = 10;
@@ -21,6 +22,7 @@ public class PathFollowerHAR : AgentBasicHAR
     PathFollowerWeaponHAR wpn;
     void Start()
     {
+        m_animator = GetComponent<Animator>();
         m_rgbd = GetComponent<Rigidbody>();
 
         if (player1 == true)
@@ -147,6 +149,7 @@ public class PathFollowerHAR : AgentBasicHAR
                 SteeringBehavioursHAR.lookAt(transform);
                 break;
         }
+        m_animator.SetFloat("Speed" , m_rgbd.velocity.magnitude);
     }
 
     void ActionManager()
@@ -160,8 +163,10 @@ public class PathFollowerHAR : AgentBasicHAR
         while (inRange)
         {
             wpnArea.SetActive(true);
+            m_animator.SetBool("atack" , true);
             yield return new WaitForSeconds(0.5f);
             wpnArea.SetActive(false);
+            m_animator.SetBool("atack" , false);
             yield return new WaitForSeconds(1.5f);
         }
     }
